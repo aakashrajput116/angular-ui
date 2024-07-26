@@ -1,0 +1,95 @@
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>create account</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a routerLink="/home/shop">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">create account</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="register-page section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>create account</h3>
+                <div class="theme-card">
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)" 
+                        novalidate="">
+                        <div class="form-group row">
+                            <label for="validationCustom0" class="col-xl-3 col-md-4"><span>*</span>First
+                                Name</label>
+                            <input class="form-control col-xl-8 col-md-7" type="text" formControlName="FirstName"
+                                [ngClass]="{ 'is-invalid': submitted && f.FirstName.errors }">
+                            <div class="col-xl-3 col-md-4"></div>
+                            <div *ngIf="submitted && f.FirstName.errors" class="col-xl-3 col-md-4 invalid-feedback">
+                                <div *ngIf="f.FirstName.errors.required">First Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="validationCustom1" class="col-xl-3 col-md-4"><span>*</span> Last
+                                Name</label>
+                            <input class="form-control col-xl-8 col-md-7" type="text" formControlName="LastName"
+                                [ngClass]="{ 'is-invalid': submitted && f.LastName.errors }">
+                            <div class="col-xl-3 col-md-4"></div>
+                            <div *ngIf="submitted && f.LastName.errors" class="col-xl-3 col-md-4 invalid-feedback">
+                                <div *ngIf="f.LastName.errors.required">Last Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="validationCustom2" class="col-xl-3 col-md-4"><span>*</span>Email</label>
+                            <input class="form-control col-xl-8 col-md-7" type="email" formControlName="EmailId"
+                                [ngClass]="{ 'is-invalid': submitted && f.EmailId.errors }">
+                            <div class="col-xl-3 col-md-4"></div>
+                            <div *ngIf="submitted && f.EmailId.errors" class="col-xl-3 col-md-4 invalid-feedback">
+                                <div *ngIf="f.EmailId.errors.required">EmailId is required</div>
+                                <div *ngIf="f.EmailId.errors.email">EmailId must be a valid email address
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="validationCustom3" class="col-xl-3 col-md-4"><span>*</span>Password</label>
+                            <input class="form-control col-xl-8 col-md-7" type="password" formControlName="password"
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                            <div class="col-xl-3 col-md-4"></div>
+                            <div class="col-xl-8 col-md-7" *ngIf="submitted && f.password.errors"
+                                class="col-xl-3 col-md-4 invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                                <div *ngIf="f.password.errors.minlength">Password must be at least 6
+                                    characters</div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="validationCustom4" class="col-xl-3 col-md-4"><span>*</span>Confirm
+                                Password</label>
+                            <input class="form-control col-xl-8 col-md-7" type="password"
+                                formControlName="confirmPassword"
+                                [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
+                            <div class="col-xl-3 col-md-4"></div>
+                            <div class="col-xl-8 col-md-7" *ngIf="submitted && f.confirmPassword.errors"
+                                class="col-xl-3 col-md-4 invalid-feedback">
+                                <div *ngIf="f.confirmPassword.errors.required">Confirm Password is
+                                    required</div>
+                                <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-button">
+                            <button class="btn btn-solid" type="submit">Create Account</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

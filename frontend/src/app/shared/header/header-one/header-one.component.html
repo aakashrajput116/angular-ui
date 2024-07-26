@@ -1,0 +1,57 @@
+<!-- header start -->
+<header id="sticky" class="sticky">
+    <div class="mobile-fix-option"></div>
+    <div class="top-header">
+        <div class="container">
+            <!-- For top menu bar -->
+            <app-topbar></app-topbar>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="main-menu">
+                    <div class="menu-left">
+                        <div class="navbar">
+                            <a (click)="openNav()" >
+                                <div class="bar-style">
+                                    <i class="fa fa-bars sidebar-bar" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                            <div id="mySidenav" class="sidenav">
+                                <a class="sidebar-overlay" (click)="closeNav()" ></a>
+                                <nav>
+                                    <div  (click)="closeNav()">
+                                        <div class="sidebar-back text-left">
+                                            <i class="fa fa-angle-left pr-2" aria-hidden="true"></i> Back
+                                        </div>
+                                    </div>
+                                    <!-- For left menu bar -->
+                                    <app-left-menu></app-left-menu>
+                                </nav>
+
+                            </div>
+                        </div>
+                        <div class="brand-logo">
+                            <a>
+                                <img src="assets/images/icon/logo.png" class="img-fluid" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-right pull-right">
+                        <div>
+                            <!-- For second top menu bar -->
+                            <app-navbar></app-navbar>
+                        </div>
+                        <div>
+
+                            <!-- For language setting icon -->
+                            <app-setting [shoppingCartItems]="shoppingCartItems" ></app-setting>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header end -->
